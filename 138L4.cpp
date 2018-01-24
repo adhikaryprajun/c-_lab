@@ -13,12 +13,12 @@ private:
 	int income_tax;
 	int net_salary;
 	
-	int calculate_net_salary() {
+	void calculate_net_salary() {
 		int gross_salary = 0;
 		all_allowances = 1.23 * basic_salary; // 123% of basic_salary
 		gross_salary = basic_salary + all_allowances;
 		income_tax = 0.3 * gross_salary; // 30% of gross_salary 
-		return ((basic_salary + all_allowances) - income_tax);
+		net_salary = ((basic_salary + all_allowances) - income_tax);
 	}
 public:
 	void set_employee_details() {
@@ -31,7 +31,6 @@ public:
 		cin>>employee_name;
 		cout<<"Salary	: "; 
 		cin>>basic_salary;	
-		net_salary=calculate_net_salary();
 	}
 
 	void get_employee_details() {
