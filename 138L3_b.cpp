@@ -1,3 +1,6 @@
+/**
+Checking the usage of extern function
+*/
 #include<iostream>
 using namespace std;
 

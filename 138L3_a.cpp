@@ -1,3 +1,6 @@
+/**
+Checking the usage of extern function
+*/
 #include<iostream>
 #include "138L3_b.cpp"
 using namespace std;

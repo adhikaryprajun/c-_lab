@@ -1,3 +1,6 @@
+/**
+Using a class with getter and setter function
+*/
 #include<iostream>
 #include<string.h>
 using namespace std;
