@@ -31,6 +31,8 @@ public:
 		cin>>employee_name;
 		cout<<"Salary	: "; 
 		cin>>basic_salary;	
+		cout<<"------------------------------------"<<endl;
+		calculate_net_salary();
 	}
 
 	void get_employee_details() {
@@ -43,13 +45,31 @@ public:
 		cout<<"Allowances	: "<<all_allowances<<endl;
 		cout<<"Income Tax	: "<<income_tax<<endl;
 		cout<<"Net Salary	: "<<net_salary<<endl;
+		cout<<"------------------------------------"<<endl;
 	}
 };
 
 int main() {
+
+	/*
 	Employee e;
 	e.set_employee_details();
 	cout<<endl;
 	e.get_employee_details();
+	*/
+
+	int no_of_employee=0;
+	Employee e[10];
+
+	cout<<"Enter no of employees:"<<endl;
+	cin>>no_of_employee;
+
+	for(int i=0;i<no_of_employee;i++) {
+		e[i].set_employee_details();		
+		cout<<endl;
+		e[i].get_employee_details();		
+		cout<<endl<<endl;
+
+	}	
 	return 0;
 }
