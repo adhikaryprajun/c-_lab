@@ -5,6 +5,7 @@ Create a Book Management and Billing System
 using namespace std;
 
 const int TITLE_SIZE=100;
+const int BOOK_NO=3;
 
 class Books {
 private:
@@ -47,17 +48,31 @@ void Books::get() {
 
 float Books::buy() {
 	int units;
-	cout<<"Enter the no of books to buy:: ";
+	cout<<"No of Books:: ";
 	cin>>units;
 	return cost(units);
 }
 
-int main() {
-	Books b;
-	b.set();
+int main() {	
+	int id, quant;
+	float totalCost=0;
+	Books b[BOOK_NO];
+	for(int i=0;i<BOOK_NO;i++) {		
+		b[i].set();
+	}
 	cout<<endl;
-	b.get();
-	cout<<endl;
-	cout<<"Total Cost:: Rs. "<<b.buy()<<endl;
+	for(int i=0;i<BOOK_NO;i++) {		
+		b[i].get();
+	}
+	cout<<endl<<endl<<endl;
+	cout<<"How many do you want to purchase?"<<endl;
+	cin>>quant;
+	for(int i=0;i<quant;i++) {	
+		cout<<"Enter Book ID::"<<endl;
+		cin>>id;
+		b[id].get();
+		totalCost+=b[id].buy();
+	}
+	cout<<"Total Cost:: Rs. "<<totalCost<<endl;
 	return 0;
 }
