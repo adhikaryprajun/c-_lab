@@ -1,3 +1,6 @@
+/**
+Matrix Addition using static and friend members
+*/
 #include<iostream>
 using namespace std;
 
@@ -17,8 +20,6 @@ int Matrix::row=0;
 int Matrix::col=0;
 
 void Matrix::setRC(int row, int col) {
-	cout<<"Enter Rows and Column::"<<endl;
-	cin>>row>>col;
 	Matrix::row=row;
 	Matrix::col=col;
 }
@@ -38,9 +39,9 @@ void Matrix::read() {
 
 void Matrix::print() {
 	cout<<"Printing the Matrix Element::"<<endl;
-	for(int i=0;i<row;i++) {
-		for(int j=0;j<col;j++) {
-			cout<<m[i][j];
+	for(int i=0;i<Matrix::row;i++) {
+		for(int j=0;j<Matrix::col;j++) {
+			cout<<m[i][j]<<" ";
 		}	
 		cout<<endl;
 	}
@@ -50,8 +51,8 @@ Matrix add(Matrix m1, Matrix m2) {
 	cout<<"Adding..."<<endl;
 	Matrix sum;
 	for(int i=0;i<Matrix::row;i++) {
-		for(int j=0;j=Matrix::col;j++) {
-			cout<<"Adding "<<i<<"x"<<j<<endl;
+		for(int j=0;j<Matrix::col;j++) {
+			cout<<"::"<<i<<"x"<<j<<endl;
 			sum.m[i][j]=m1.m[i][j] + m2.m[i][j];
 		}
 	}
@@ -60,7 +61,10 @@ Matrix add(Matrix m1, Matrix m2) {
 
 int main() {
 	Matrix m1, m2, sum;
-	Matrix::setRC();	
+	int row, col;
+	cout<<"Enter Rows and Column::"<<endl;
+	cin>>row>>col;
+	Matrix::setRC(row, col);	
 
 	m1.read();
 	m1.print();	
