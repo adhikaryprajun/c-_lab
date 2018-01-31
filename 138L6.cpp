@@ -73,7 +73,7 @@ public:
 int main() {
 	NumberToString nts;
 	for(int i=0;i<10;i++) {
-		nts.toString(i);
+		cout<<nts.toString(i)<<endl;
 	}
 	return 0;
 }
