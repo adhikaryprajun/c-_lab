@@ -2,6 +2,7 @@
 Matrix Addition using static and friend members
 */
 #include<iostream>
+#include<unistd.h>
 using namespace std;
 
 class Matrix {
@@ -53,6 +54,7 @@ Matrix add(Matrix m1, Matrix m2) {
 	for(int i=0;i<Matrix::row;i++) {
 		for(int j=0;j<Matrix::col;j++) {
 			cout<<"::"<<i<<"x"<<j<<endl;
+			sleep(1);
 			sum.m[i][j]=m1.m[i][j] + m2.m[i][j];
 		}
 	}
@@ -60,7 +62,7 @@ Matrix add(Matrix m1, Matrix m2) {
 }
 
 int main() {
-	Matrix m1, m2, sum;
+	Matrix m1, m2;
 	int row, col;
 	cout<<"Enter Rows and Column::"<<endl;
 	cin>>row>>col;
@@ -72,7 +74,6 @@ int main() {
 	m2.read();
 	m2.print();
 
-	sum=add(m1, m2);
-	sum.print();	
+	add(m1, m2).print();
 	return 0;
 }
