@@ -1,3 +1,6 @@
+/**
+Comparing two string using a class
+*/
 #include<iostream>
 #include<string.h>
 using namespace std;
