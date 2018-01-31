@@ -1,3 +1,6 @@
+/**
+Using static variable declaration inside a class
+*/
 #include<iostream>
 using namespace std;
 
